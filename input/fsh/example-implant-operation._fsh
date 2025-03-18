@@ -1,0 +1,47 @@
+Instance: ExampleImplantOperation
+InstanceOf: Parameters
+Usage: #example
+* language = #fr-FR
+
+* parameter[0].name = #nirPatient
+* parameter[0].valueString = "1770653130040015"
+
+* parameter[1].name = #rppsSurgeon
+* parameter[1].valueString = "123456789"
+
+* parameter[2].name = #finessHospital
+* parameter[2].valueString = "7897897984"
+
+* parameter[3].name = #dateIntervention
+* parameter[3].valueDate = "2025-03-18"
+
+* parameter[4].name = #kind
+* parameter[4].valueCodeableConcept.coding[0].system = "http://snomed.info/sct"
+* parameter[4].valueCodeableConcept.coding[0].code = #609588000
+* parameter[4].valueCodeableConcept.coding[0].display = "Total knee arthroplasty"
+
+// First Implant
+* parameter[5].name = #implants
+* parameter[5].part[0].name = #UDI
+* parameter[5].part[0].valueString = "(01)0471277400061(17)280322(10)230728E"
+* parameter[5].part[1].name = #fournisseur
+* parameter[5].part[1].valueString = "UNITED"
+* parameter[5].part[2].name = #reference
+* parameter[5].part[2].valueString = "2203-5230"
+* parameter[5].part[3].name = #lot
+* parameter[5].part[3].valueString = "23A728E"
+* parameter[5].part[4].name = #description
+* parameter[5].part[4].valueString = "U2 Total Knee System Tibial Baseplate"
+
+// Second Implant
+* parameter[6].name = #implants
+* parameter[6].part[0].name = #UDI
+* parameter[6].part[0].valueString = "(01)0471202348126(17)280325(10)23A304F"
+* parameter[6].part[1].name = #fournisseur
+* parameter[6].part[1].valueString = "UNITED"
+* parameter[6].part[2].name = #reference
+* parameter[6].part[2].valueString = "2303-3033"
+* parameter[6].part[3].name = #lot
+* parameter[6].part[3].valueString = "23A304F"
+* parameter[6].part[4].name = #description
+* parameter[6].part[4].valueString = "Tibial Insert Posterio Stabilized"

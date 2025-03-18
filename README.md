@@ -1,20 +1,18 @@
 # Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+FHIR Implementation Guide Toolbox using `bonfhir/ig-toolbox`
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+## Requirements
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+- Docker
+- VSCode with devcontainer extension installed
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+## Setup
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+Open project with VSCode using devcontainers so that you dont have to install all the tooling required to build IG (rails, node, jekyll etc...)
+
+Run task named `Update IG Publisher` the first time you open the project
+
+Then run task `Run IG Publisher` to build the IG website (be patient it take few minutes to build the site, each freaking time !)
+
+You can then open up [Implementation Guide](output/index.html)
+Issues and errors are listed in [QA](output/qa.html)
