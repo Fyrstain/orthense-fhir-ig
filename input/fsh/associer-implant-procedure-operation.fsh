@@ -1,50 +1,50 @@
-Instance: SurgicalProcedureOperation
+Instance: AssocierImplantsProcedure
 InstanceOf: OperationDefinition
 Usage: #definition
-Description: "Opération permettant de déclarer une intervention chirurgicale avec implants, incluant les données du patient, du chirurgien, de l'établissement et les détails techniques des dispositifs implantés."
+Description: "Opération permettant d'associer les implants correspondants à une intervention chirurgicale."
 * language = #fr-FR
 
-* url = "https://fhir.orthense.com/OperationDefinition/SurgicalProcedureOperation"
-* name = "SurgicalProcedureOperation"
-* title = "Déclaration d'intervention chirurgicale avec implants"
+* url = "https://fhir.orthense.com/OperationDefinition/AssocierImplantsProcedure"
+* name = "AssocierImplantsProcedure"
+* title = "Associer les implants à une procédure chirurgicale orthopédique"
 * status = #active
 * kind = #operation
-* code = #surgical-procedure
+* code = #associer-implants-procedure
 * system = false
 * type = true
 * instance = false
-* resource[0] = #Patient
+* resource[0] = #Procedure
 * affectsState = true
-* comment = "Cette opération permet aux établissements de santé de déclarer officiellement les interventions chirurgicales implantaires, contribuant au registre national des implants orthopédiques."
+* comment = "Cette opération permet aux établissements de santé d'associer les informations liées au implants en orthopédie, contribuant ainsi au registre national des implants orthopédiques."
 
 // Required Input Parameters - Patient et Intervenant Information
-* parameter[0].name = #patientInfo
+* parameter[0].name = #identifiantsPartiesPrenantes
 * parameter[0].use = #in
 * parameter[0].min = 1
 * parameter[0].max = "1"
 * parameter[0].type = #Parameters
 * parameter[0].documentation = "Informations d'identification du patient et des intervenants"
 
-* parameter[0].part[0].name = #nirPatient
+* parameter[0].part[0].name = #nir
 * parameter[0].part[0].use = #in
 * parameter[0].part[0].min = 1
 * parameter[0].part[0].max = "1"
 * parameter[0].part[0].type = #Identifier
 * parameter[0].part[0].documentation = "NIR du patient (Numéro d'Identification au Répertoire) - Identifiant unique du patient"
 
-* parameter[0].part[1].name = #rppsSurgeon
+* parameter[0].part[1].name = #rpps
 * parameter[0].part[1].use = #in
 * parameter[0].part[1].min = 1
 * parameter[0].part[1].max = "1"
 * parameter[0].part[1].type = #Identifier
 * parameter[0].part[1].documentation = "RPPS du chirurgien - Identifiant unique du professionnel de santé"
 
-* parameter[0].part[2].name = #finessHospital
+* parameter[0].part[2].name = #finessGeo
 * parameter[0].part[2].use = #in
 * parameter[0].part[2].min = 1
 * parameter[0].part[2].max = "1"
 * parameter[0].part[2].type = #Identifier
-* parameter[0].part[2].documentation = "FINESS de l'établissement de santé"
+* parameter[0].part[2].documentation = "FINESS géographique de l'établissement de santé"
 
 // Procedure Information
 * parameter[1].name = #procedureInfo
@@ -58,8 +58,8 @@ Description: "Opération permettant de déclarer une intervention chirurgicale a
 * parameter[1].part[0].use = #in
 * parameter[1].part[0].min = 1
 * parameter[1].part[0].max = "1"
-* parameter[1].part[0].type = #dateTime
-* parameter[1].part[0].documentation = "Date et heure de l'intervention chirurgicale"
+* parameter[1].part[0].type = #date
+* parameter[1].part[0].documentation = "Date de l'intervention chirurgicale"
 
 * parameter[1].part[1].name = #procedureType
 * parameter[1].part[1].use = #in
@@ -68,7 +68,7 @@ Description: "Opération permettant de déclarer une intervention chirurgicale a
 * parameter[1].part[1].type = #CodeableConcept
 * parameter[1].part[1].documentation = "Code SNOMED CT pour l'intervention (Ex: Arthroplastie totale du genou ou de la hanche)"
 * parameter[1].part[1].binding.strength = #required
-* parameter[1].part[1].binding.valueSet = "https://fhir.orthense.com/ValueSet/TKA_THA_ProcedureCodes"
+* parameter[1].part[1].binding.valueSet = "https://fhir.orthense.com/ValueSet/RegistresRenacot_ProcedureCodes"
 
 // Implants Array (Repeating Complex Structure)
 * parameter[2].name = #implants
@@ -137,4 +137,4 @@ Description: "Opération permettant de déclarer une intervention chirurgicale a
 * parameter[4].max = "1"
 * parameter[4].type = #Reference
 * parameter[4].targetProfile = "http://hl7.org/fhir/StructureDefinition/Procedure"
-* parameter[4].documentation = "Référence à la ressource Procedure créée"
+* parameter[4].documentation = "Référence à la ressource Procedure associée"

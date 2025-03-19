@@ -5,7 +5,7 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "MITRE-Health.vscode-language-fsh",
+        "fhir-shorthand.vscode-fsh",
         "jebbs.plantuml"
       ]
     }

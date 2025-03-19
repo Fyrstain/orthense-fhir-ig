@@ -6,25 +6,25 @@ Description: "Exemple d'utilisation de l'opération SurgicalProcedureOperation p
 
 * language = #fr-FR
 
-* parameter[0].name = "patientInfo"
-* parameter[0].part[0].name = "nirPatient"
+* parameter[0].name = "identifiantsPartiesPrenantes"
+* parameter[0].part[0].name = "nir"
 * parameter[0].part[0].valueIdentifier.system = "http://france.fr/nir"
 * parameter[0].part[0].valueIdentifier.value = "1234567890123"
 
-* parameter[0].part[1].name = "rppsSurgeon"
+* parameter[0].part[1].name = "rpps"
 * parameter[0].part[1].valueIdentifier.system = "https://annuaire.sante.fr/rpps" 
 * parameter[0].part[1].valueIdentifier.value = "10012345678"
 
-* parameter[0].part[2].name = "finessHospital"
+* parameter[0].part[2].name = "finessGeo"
 * parameter[0].part[2].valueIdentifier.system = "https://finess.sante.gouv.fr"
 * parameter[0].part[2].valueIdentifier.value = "310780259"
 
 * parameter[1].name = "procedureInfo"
 * parameter[1].part[0].name = "dateIntervention"
-* parameter[1].part[0].valueDateTime = "2025-03-15T09:30:00+01:00"
+* parameter[1].part[0].valueDateTime = "2025-03-15"
 
 * parameter[1].part[1].name = "procedureType"
-* parameter[1].part[1].valueCodeableConcept = $sct#609588000 "Total knee replacement"
+* parameter[1].part[1].valueCodeableConcept = $sct#398010007 "Prosthetic arthroplasty of hip"
 
 
 // Premier implant - Composant fémoral
@@ -104,13 +104,13 @@ Description: "Exemple de réponse générée par l'opération SurgicalProcedureO
 * parameter[0].resource.resourceType = "OperationOutcome"
 * parameter[0].resource.issue.severity = #information
 * parameter[0].resource.issue.code = #informational
-* parameter[0].resource.issue.diagnostics = "La procédure chirurgicale a été enregistrée avec succès"
+* parameter[0].resource.issue.diagnostics = "Les implants ont été associés avec succès"
 * parameter[0].resource.issue.details.coding.system = "https://fhir.orthense.com/CodeSystem/operation-outcomes"
-* parameter[0].resource.issue.details.coding.code = #procedure-created
-* parameter[0].resource.issue.details.coding.display = "Procédure créée avec succès"
+* parameter[0].resource.issue.details.coding.code = #procedure-updated
+* parameter[0].resource.issue.details.coding.display = "Procédure mise à jour avec succès"
 
 * parameter[1].name = "procedureReference"
-* parameter[1].valueReference.reference = "Procedure/OP-2025-03-15-123456"
+* parameter[1].valueReference.reference = "Procedure/874586798456"
 * parameter[1].valueReference.type = "Procedure"
 
 // Define aliases to external code systems at the top of the file
