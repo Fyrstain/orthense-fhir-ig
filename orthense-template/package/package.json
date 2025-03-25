@@ -1,0 +1,13 @@
+{
+    "name": "orthense.fhir.template",
+    "version": "0.1.0",
+    "type": "fhir.template",
+    "license": "CC0-1.0",
+    "description": "IHE FHIR Template",
+    "author": "http://ihe.net",
+    "canonical": "http://fhir.org/templates/ihe.fhir.template",
+    "base": "fhir.base.template",
+    "dependencies": {
+        "fhir.base.template": "current"
+    }
+}
