@@ -130,3 +130,5 @@ if [[ $skipPrompts == true ]] || [[ $response =~ ^[yY].*$ ]]; then
   chmod +x _updatePublisher.sh
   rm /tmp/_updatePublisher.new
 fi
+
+echo "Done"

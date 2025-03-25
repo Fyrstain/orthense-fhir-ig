@@ -16,6 +16,8 @@ Description: "Opération permettant d'associer les implants correspondants à un
 * resource[0] = #Procedure
 * affectsState = true
 * comment = "Cette opération permet aux établissements de santé d'associer les informations liées au implants en orthopédie, contribuant ainsi au registre national des implants orthopédiques."
+// Lien vers la documentation d'authentification
+* description = "Voir la documentation complète sur [l'authentification API](auth-client-credentials.html)."
 
 // Required Input Parameters - Patient et Intervenant Information
 * parameter[0].name = #identifiantsPartiesPrenantes
@@ -138,3 +140,5 @@ Description: "Opération permettant d'associer les implants correspondants à un
 * parameter[4].type = #Reference
 * parameter[4].targetProfile = "http://hl7.org/fhir/StructureDefinition/Procedure"
 * parameter[4].documentation = "Référence à la ressource Procedure associée"
+
+
