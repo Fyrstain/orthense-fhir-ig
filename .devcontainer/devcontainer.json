@@ -9,5 +9,9 @@
         "jebbs.plantuml"
       ]
     }
-  }
+  },
+  "mounts": [
+    "source=${env:USERPROFILE}\\.gitconfig,target=/home/vscode/.gitconfig,type=bind",
+    "source=${env:USERPROFILE}\\.ssh,target=/home/vscode/.ssh,type=bind"
+  ]
 }
