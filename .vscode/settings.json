@@ -1,0 +1,6 @@
+{
+    "files.exclude": {
+        "**/.index.db": true,
+        "**/.index.json": true
+    }
+}

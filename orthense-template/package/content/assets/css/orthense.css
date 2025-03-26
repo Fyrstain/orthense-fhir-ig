@@ -7,20 +7,21 @@
     Usage:
        var(--publish-box-bg-color); 
        
-       override only those that IHE needs to be different than the default
+       override only those that Orthense needs to be different than the default
        
     */
     
-    /* IHE changes from ig base project.css : 1-8, 21-28 */
+    /* orthense changes from ig base project.css : 1-8, 21-28 */
       --ig-status-text-color: #1e0a37; /* 1. IG Title and status text color */
-      --navbar-bg-color: #ff0066; /* 2. Header container color */
+      --ig-header-color: #000b3a; /* 1.1 Header strip color */
+      --navbar-bg-color: #000b3a; /* 2. Header container color */
       --footer-bg-color: #b20047; /* 3. Footer background color*/
-      --footer-container-bg-color: #ff0066; /* 4. Footer container color */
+      --footer-container-bg-color: #b20047; /* 4. Footer container color */
       --stripe-bg-color: #000b3a; /* 5. Header strip color */
-      /* color from bar on www.ihe.net 50398b */
       
-      --btn-hover-color: #191970;  /* 6. Menu button hover color */
-      --btn-active-color: #191970; /* 7. Menu button active color */
+      
+      --btn-hover-color: #ff0066;  /* 6. Menu button hover color */
+      --btn-active-color: #ff0066; /* 7. Menu button active color */
       --btn-text-color: #e6e6e6; /* 8. Menu button text color */
     
       --btn-gradient-start-color: #428bca; /* 9. Menu item gradient start color */
@@ -56,6 +57,11 @@
     
     }
     
+    #orthense-logo > img {
+        height: 48px;
+        aspect-ratio: 1;
+        margin: 8px;
+    }
     /*
     
     // this can be removed when base template is updated

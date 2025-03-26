@@ -49,12 +49,12 @@ pages:
     title: Accueil
   auth-client-credentials.md:
     title: Authentification
-  disclaimer.md:
-    title: Mentions légales et conformité
   glossary.md:
     title: Glossaire
   downloads.md:
     title: Téléchargements et usages
+  disclaimer.md:
+    title: Mentions légales et conformité
   # implementation.xml:
   # examples.xml:
   #   title: Examples

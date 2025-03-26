@@ -1,24 +1,13 @@
-# Orthense on FHIR 
+Ce guide vous accompagne dans l'intégration et l'interopérabilité avec Orthense en fournissant les spécifications nécessaires à l'utilisation des API et des ressources associées.  
 
-Ce guide a pour but de vous accompagner dans l'intéropérabilité avec Orthense
+## Authentification  
+Découvrez comment vous authentifier auprès d'Orthense et sécuriser vos appels API. [Lire la documentation](auth-client-credentials.html).  
 
-## Authentification
+## Artéfacts  
+Retrouvez l’ensemble des ressources FHIR, y compris les opérations, terminologies et exemples d'implémentation. [Consulter la liste](artifacts.html).  
 
-Décrit comment s'authentifier auprès de Orthense.
+## Glossaire  
+Définitions des termes, acronymes et concepts utilisés dans ce guide. [Voir le glossaire](glossary.html).  
 
-## Association des implants
-
-Décrit comment Orthense FHIR permet aux établissements de remonter les informations d'implants associées à une procédure Orthopédique liée au Registre National des Implants Orthopédiques - RENACOT
-
-[Détails](OperationDefinition-AssocierImplantsProcedure.html)
-
-## Glossaire
-
-Liste des termes et abréviations 
-
-[Détails](glossary.html)
-
-### Mentions légales et conformité
-
-
-[Détails](disclaimer.html)
+## Mentions légales et conformité  
+Informations sur les obligations légales et les exigences de conformité. [Détails ici](disclaimer.html).  
