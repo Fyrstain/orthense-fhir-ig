@@ -72,6 +72,16 @@ Description: "Opération permettant d'associer les implants correspondants à un
 * parameter[1].part[1].binding.strength = #required
 * parameter[1].part[1].binding.valueSet = "https://fhir.orthense.com/ValueSet/RegistresRenacot_ProcedureCodes"
 
+* parameter[1].part[2].name = #cote
+* parameter[1].part[2].use = #in
+* parameter[1].part[2].min = 0
+* parameter[1].part[2].max = "1"
+* parameter[1].part[2].type = #CodeableConcept
+* parameter[1].part[2].documentation = "Code SNOMED CT décrivant le côté opéré"
+* parameter[1].part[2].binding.strength = #required
+* parameter[1].part[2].binding.valueSet = "https://fhir.orthense.com/ValueSet/RegistresRenacot_Side"
+
+
 // Implants Array (Repeating Complex Structure)
 * parameter[2].name = #implants
 * parameter[2].use = #in
