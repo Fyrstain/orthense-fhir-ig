@@ -17,9 +17,19 @@ Description: "Opération permettant d'associer les implants correspondants à un
 * affectsState = true
 * comment = "Cette opération permet aux établissements de santé d'associer les informations liées au implants en orthopédie, contribuant ainsi au registre national des implants orthopédiques."
 // Lien vers la documentation d'authentification
-* description = "Voir la documentation complète sur [l'authentification API](auth-client-credentials.html)."
+* description = "Cette opération permet d'associer les implants utilisés lors d'une intervention chirurgicale orthopédique à un enregistrement dans le registre Renacot. Elle est destinée aux établissements de santé et aux professionnels de santé impliqués dans la gestion des implants orthopédiques.
 
-* comment = "Voir les exemples : 
+Cette opération est essentielle pour garantir la traçabilité des implants et améliorer la sécurité des patients. C'est de plus un gain de temps pour les équipes médicales qui se voient ainsi délestées de cette tache et assure une conformité native aux exigences réglementaires liée au registre des implants orthopédiques. 
+
+En décrivant les parties prenantes, la procédure chirurgicale et les implants utilisés, cette opération facilite la gestion des données cliniques et contribue à l'amélioration continue de la qualité des soins.
+
+Cette opération nécessite une authentification via le protocole OAuth2.0. Les utilisateurs doivent obtenir un jeton d'accès valide pour effectuer cette opération. Le jeton doit être inclus dans l'en-tête de la requête HTTP sous la forme : `Authorization: Bearer {token}`.
+
+Voir la documentation complète sur [l'authentification API](auth-client-credentials.html)."
+
+* comment = "#### Exemples :
+Des exemples de requêtes et de réponses sont fournis ci dessous pour illustrer l'utilisation de cette opération.
+
   - [Requête](Parameters-AssocierImplantsProcedureExample.html)
   - [Réponse](Parameters-AssocierImplantsProcedureResponseExample.html)"
 

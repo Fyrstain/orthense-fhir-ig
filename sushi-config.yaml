@@ -51,6 +51,8 @@ pages:
     title: Authentification
   glossary.md:
     title: Glossaire
+  implants.md:
+    title: Alimentation du registre national des implants en orthopédie
   downloads.md:
     title: Téléchargements et usages
   disclaimer.md:
@@ -86,7 +88,9 @@ pages:
 # Top horizontal menu:
 menu:
   Accueil: index.html
+  Implants Renacot: implants.html
   Artéfacts: artifacts.html
+  Authentification: auth-client-credentials.html
   Glossaire: glossary.html
   Téléchargements: downloads.html
   

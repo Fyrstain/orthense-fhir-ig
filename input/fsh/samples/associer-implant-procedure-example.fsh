@@ -112,8 +112,7 @@ Description: "Exemple de réponse générée par l'opération SurgicalProcedureO
 * parameter[0].resource.issue.details.coding.display = "Procédure mise à jour avec succès"
 
 * parameter[1].name = "procedureReference"
-* parameter[1].valueReference.reference = "Procedure/874586798456"
-* parameter[1].valueReference.type = "Procedure"
-
+* parameter[1].valueIdentifier.system = "http://france.fr/nir"
+* parameter[1].valueIdentifier.value = "1234567890123"
 // Define aliases to external code systems at the top of the file
 Alias: $sct = http://snomed.info/sct
