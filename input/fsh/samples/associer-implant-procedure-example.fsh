@@ -30,7 +30,7 @@ Description: "Exemple d'utilisation de l'opération SurgicalProcedureOperation p
 // Premier implant - Composant fémoral
 * parameter[2].name = "implants"
 * parameter[2].part[0].name = "UDI"
-* parameter[2].part[0].valueIdentifier.system = "http://hl7.org/fhir/NamingSystem/udi"
+* parameter[2].part[0].valueIdentifier.system = "https://ec.europa.eu/tools/eudamed"
 * parameter[2].part[0].valueIdentifier.value = "(01)00844588003288(17)250315(10)A213B456"
 
 * parameter[2].part[1].name = "fournisseur"
@@ -53,7 +53,7 @@ Description: "Exemple d'utilisation de l'opération SurgicalProcedureOperation p
 // Deuxième implant - Plateau tibial
 * parameter[3].name = "implants"
 * parameter[3].part[0].name = "UDI"
-* parameter[3].part[0].valueIdentifier.system = "http://hl7.org/fhir/NamingSystem/udi"
+* parameter[3].part[0].valueIdentifier.system = "https://ec.europa.eu/tools/eudamed"
 * parameter[3].part[0].valueIdentifier.value = "(01)00844588003295(17)250315(10)A213B457"
 
 * parameter[3].part[1].name = "fournisseur"
