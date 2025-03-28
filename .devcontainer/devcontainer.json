@@ -6,7 +6,8 @@
     "vscode": {
       "extensions": [
         "fhir-shorthand.vscode-fsh",
-        "jebbs.plantuml"
+        "jebbs.plantuml",
+        "bierner.markdown-mermaid"
       ]
     }
   },
