@@ -65,6 +65,13 @@ curl -X GET "https://api.orthense.com/resource" \
       *H "Authorization: Bearer <VOTRE_ACCESS_TOKEN>"
 ```
 
+### 4. Diagramme de séquence
+
+<figure>
+  {% include client-credential-flow.svg %}
+</figure>
+<br clear="all">
+
 ### Bonnes pratiques
 
 - **Sécuriser les identifiants** : Ne jamais exposer `client_id` et `client_secret` dans du code côté client ou dans un dépôt public.

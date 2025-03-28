@@ -2,7 +2,7 @@ Instance: AssocierImplantsProcedure
 InstanceOf: OperationDefinition
 Usage: #definition
 Description: "Opération permettant d'associer les implants correspondants à une intervention chirurgicale."
-* language = #fr-FR
+
 
 * url = "https://fhir.orthense.com/OperationDefinition/AssocierImplantsProcedure"
 * name = "AssocierImplantsProcedure"
@@ -18,6 +18,10 @@ Description: "Opération permettant d'associer les implants correspondants à un
 * comment = "Cette opération permet aux établissements de santé d'associer les informations liées au implants en orthopédie, contribuant ainsi au registre national des implants orthopédiques."
 // Lien vers la documentation d'authentification
 * description = "Voir la documentation complète sur [l'authentification API](auth-client-credentials.html)."
+
+* comment = "Voir les exemples : 
+  - [Requête](Parameters-AssocierImplantsProcedureExample.html)
+  - [Réponse](Parameters-AssocierImplantsProcedureResponseExample.html)"
 
 // Required Input Parameters - Patient et Intervenant Information
 * parameter[0].name = #identifiantsPartiesPrenantes
@@ -143,12 +147,11 @@ Description: "Opération permettant d'associer les implants correspondants à un
 * parameter[3].type = #OperationOutcome
 * parameter[3].documentation = "Résultat de l'opération indiquant le succès ou l'échec avec détails"
 
-* parameter[4].name = #procedureReference
+
+* parameter[4].name = #referenceRegistre
 * parameter[4].use = #out
 * parameter[4].min = 0
 * parameter[4].max = "1"
-* parameter[4].type = #Reference
-* parameter[4].targetProfile = "http://hl7.org/fhir/StructureDefinition/Procedure"
-* parameter[4].documentation = "Référence à la ressource Procedure associée"
-
+* parameter[4].type = #Identifier
+* parameter[4].documentation = "Identifiant du suivi orthopédique dans le registre Renacot"
 

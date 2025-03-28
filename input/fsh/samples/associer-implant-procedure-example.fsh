@@ -1,10 +1,10 @@
-Instance: SurgicalProcedureExample
+Instance: AssocierImplantsProcedureExample
 InstanceOf: Parameters
 Usage: #example
 Title: "Exemple de déclaration d'intervention chirurgicale"
 Description: "Exemple d'utilisation de l'opération SurgicalProcedureOperation pour déclarer une arthroplastie totale de genou droit"
 
-* language = #fr-FR
+* id = "AssocierImplantsProcedureExample"
 
 * parameter[0].name = "identifiantsPartiesPrenantes"
 * parameter[0].part[0].name = "nir"
@@ -94,11 +94,13 @@ Description: "Exemple d'utilisation de l'opération SurgicalProcedureOperation p
 
 
 // Sample response (in a separate instance)
-Instance: SurgicalProcedureExampleResponse
+Instance: AssocierImplantsProcedureExampleResponse
 InstanceOf: Parameters
 Usage: #example
 Title: "Exemple de réponse à une déclaration d'intervention chirurgicale"
 Description: "Exemple de réponse générée par l'opération SurgicalProcedureOperation"
+
+* id = "AssocierImplantsProcedureResponseExample"
 
 * parameter[0].name = "operationOutcome"
 * parameter[0].resource.resourceType = "OperationOutcome"
