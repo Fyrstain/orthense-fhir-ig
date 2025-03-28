@@ -4,7 +4,38 @@ Le registre national des implants en orthopédie est un outil essentiel pour gar
 
 Cette page détaille le processus d'implémentation FHIR pour l'alimentation de ce registre, en exposant les raisons de cette démarche, les étapes techniques à suivre, les erreurs courantes et les informations de retour obtenues.
 
+```mermaid
+graph TD
+    subgraph "Saisie manuelle"
+        A[Patients]
+        B[Soignants]
+    end
+
+    subgraph "Flux automatique"
+        C[Établissements]
+    end
+
+    subgraph "Plateformes"
+        D[Orthense]
+        E[Renacot]
+    end
+
+    A -->|Questionnaire web| D
+    B -->|Questionnaire web| D
+    C -->|Interop FHIR Implants| D
+    D -->|ETL| E
+    A -->|Questionnaire web| E
+    B -->|Questionnaire web| E
+
+    style A fill:#ffcc99,stroke:#ffcc99,stroke-width:2px
+    style B fill:#99ffcc,stroke:#99ffcc,stroke-width:2px
+    style C fill:#ccccff,stroke:#ccccff,stroke-width:2px
+    style D fill:#ff0066,stroke:#ff0066,stroke-width:2px
+    style E fill:#0074ff,stroke:#0074ff,stroke-width:2px
+```
+
 #### Pourquoi alimenter le registre ?
+
 
 ##### Sécurité des patients
 Le principal objectif de l'alimentation du registre est d'assurer la traçabilité des implants utilisés. Cela permet d'identifier rapidement un implant spécifique en cas de problème, facilitant ainsi la gestion des risques et la prise de décisions cliniques.
