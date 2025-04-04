@@ -1,3 +1,20 @@
+Invariant: nir-regex
+Description: "NIR must match the French NIR format"
+Severity: #error
+Expression: "$this.matches('^[12][0-9]{2}(0[1-9]|1[0-2])(2[AB]|[0-9]{2})[0-9]{3}[0-9]{3}[0-9]{2}$')"
+
+Invariant: rpps-regex
+Description: "RPPS must match the French RPPS format"
+Severity: #error
+Expression: "$this.matches('^[0-9]{11}$')"
+
+Invariant: finess-regex
+Description: "NIR must match the French NIR format"
+Severity: #error
+Expression: "$this.matches('^[0-9]{9}$')"
+
+
+
 // Profil de Base pour les Paramètres d'Entrée
 Profile: InterventionInputParametersBaseProfile
 Id: InterventionInputParametersBaseProfile
@@ -19,23 +36,14 @@ Description: "Définit la structure et les contraintes de base pour les paramèt
 * parameter[nir].name = #nir (exactly)
 * parameter[nir].value[x] only string
 * parameter[nir].value[x] 1..1 // Rendre la valeur obligatoire explicitement
-* parameter[nir].valueString ^constraint[0].key = "nir-regex"
-* parameter[nir].valueString ^constraint[0].severity = #error
-* parameter[nir].valueString ^constraint[0].human = "NIR must match the French NIR format"
-* parameter[nir].valueString ^constraint[0].expression = "$this.matches('^[12][0-9]{2}(0[1-9]|1[0-2])(2[AB]|[0-9]{2})[0-9]{3}[0-9]{3}[0-9]{2}$')"
-
-// * parameter[nir].documentation = "..." // Supprimé
+* parameter[nir].valueString obeys nir-regex
 
 // Paramètre 'rpps'
 * parameter contains rpps 1..1
 * parameter[rpps].name = #rpps (exactly)
 * parameter[rpps].value[x] only string
 * parameter[rpps].value[x] 1..1
-* parameter[rpps].valueString ^constraint[0].key = "rpps-regex"
-* parameter[rpps].valueString ^constraint[0].severity = #error
-* parameter[rpps].valueString ^constraint[0].human = "RPPS must match the French RPPS format"
-* parameter[rpps].valueString ^constraint[0].expression = "$this.matches('^[1][0-9]{10}$')"
-
+* parameter[rpps].valueString obeys rpps-regex
 // * parameter[rpps].documentation = "..." // Supprimé
 
 // Paramètre 'finessGeographique'
@@ -43,12 +51,7 @@ Description: "Définit la structure et les contraintes de base pour les paramèt
 * parameter[finessGeographique].name = #finessGeographique (exactly)
 * parameter[finessGeographique].value[x] only string
 * parameter[finessGeographique].value[x] 1..1
-* parameter[finessGeographique].valueString ^constraint[0].key = "finess-regex"
-* parameter[finessGeographique].valueString ^constraint[0].severity = #error
-* parameter[finessGeographique].valueString ^constraint[0].human = "FINESS GEO must match the French FINESS GEO format"
-* parameter[finessGeographique].valueString ^constraint[0].expression = "$this.matches('^[0-9]{9}$')"
-
-// * parameter[finessGeographique].documentation = "..." // Supprimé
+* parameter[finessGeographique].valueString obeys finess-regex
 
 * parameter contains lateralite 0..1
 * parameter[lateralite].name = #lateralite (exactly)
@@ -68,7 +71,7 @@ Description: "Définit la structure et les contraintes de base pour les paramèt
 * parameter[typeProcedure].name = #typeProcedure (exactly)
 * parameter[typeProcedure].value[x] only CodeableConcept
 * parameter[typeProcedure].value[x] 1..1 // Rendre la valeur obligatoire explicitement
-* parameter[typeProcedure].valueCodeableConcept from https://fhir.orthense.com/ValueSet/InterventionTypeVS (required) 
+* parameter[typeProcedure].valueCodeableConcept from https://fhir.orthense.com/ValueSet/RegistreVS (required) 
 
 * parameter[typeProcedure].valueCodeableConcept ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support"
 * parameter[typeProcedure].valueCodeableConcept ^extension[=].valueString = "When typeProcedure is PG, use profile https://fhir.orthense.com/StructureDefinition/intervention-input-parameters-pg-profile"
@@ -154,3 +157,4 @@ Description: "Définit la structure et les contraintes de base pour les paramèt
 // // // Optionnel: Rendre la référence catalogue obligatoire pour l'ortho
 // // * parameter[implants].part[reference] 1..1 // Rend la part 'reference' obligatoire
 // // * parameter[implants].part[reference].value[x] 1..1 // Assurer que la valeur est présente si la part l'est
+

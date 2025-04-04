@@ -1,5 +1,5 @@
 // CodeSystem pour les types de procédure (local, car pas de SNOMED)
-CodeSystem: InterventionTypeCS
+CodeSystem: RegistreCS
 Id: intervention-type
 Title: "CodeSystem - Types d'intervention"
 Description: "Système de codes locaux définissant les types de procédures chirurgicales associées au registre Renacot."
