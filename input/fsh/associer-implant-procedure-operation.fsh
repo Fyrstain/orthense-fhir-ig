@@ -1,11 +1,3 @@
-Instance: AssocierImplantsProcedure
-InstanceOf: OperationDefinition
-Usage: #definition
-Description: "Opération permettant d'associer les implants correspondants à une intervention chirurgicale."
-
-
-* url = "https://fhir.orthense.com/OperationDefinition/AssocierImplantsProcedure"
-* name = "AssocierImplantsProcedure"
 * title = "Associer les implants à une procédure chirurgicale orthopédique"
 * status = #active
 * kind = #operation
