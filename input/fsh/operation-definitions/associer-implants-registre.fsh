@@ -12,14 +12,13 @@ Le profil appliqué dépend de la valeur du paramètre typeProcedure."
 * name = "AssocierImplantsRegistre" // Le 'name' de l'OperationDefinition
 * status = #draft
 * kind = #operation
-* experimental = true
 * affectsState = true
 * code = #associer-implants-registre // Le 'code' de l'OperationDefinition
 * system = true
 * type = false
 * instance = false
-* inputProfile = Canonical(InterventionInputParametersBaseProfile) //Canonical($PROF_PARAMS_BASE)
 
+* inputProfile = Canonical(InterventionInputParametersBaseProfile) //Canonical($PROF_PARAMS_BASE)
 * outputProfile = Canonical(OperationOutcome)
 
 // Définition des paramètres (utilisation d'index [0], [1], ... pour les listes dans les instances FSH)
@@ -124,5 +123,17 @@ Le profil appliqué dépend de la valeur du paramètre typeProcedure."
 * parameter[7].use = #out
 * parameter[7].min = 1
 * parameter[7].max = "1"
-* parameter[7].documentation = "Résultat de l'opération, incluant les succès ou erreurs."
 * parameter[7].type = #OperationOutcome
+* parameter[8].documentation = """
+Contient les informations de succès ou d'erreur de l'opération, dont :
+- le statut (HTTP 200, 400, 422, 429, 500)
+- les détails des erreurs (le cas échéant)
+"""
+
+// En cas de succès, identifiant RENACOT
+* parameter[8].name = #registre-identifier
+* parameter[8].use = #out
+* parameter[8].min = 0
+* parameter[8].max = "1"
+* parameter[8].type = #Identifier
+* parameter[8].documentation = "Identifiant unique généré par le registre RENACOT lors d’un appairage réussi. Utilisable pour l’archivage dans le système local."

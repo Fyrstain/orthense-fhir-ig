@@ -24,7 +24,7 @@ Description: "Exemple d'utilisation de l'opération SurgicalProcedureOperation p
 * parameter[1].part[0].valueDateTime = "2025-03-15"
 
 * parameter[1].part[1].name = "procedureType"
-* parameter[1].part[1].valueCodeableConcept = $sct#398010007 "Prosthetic arthroplasty of hip"
+* parameter[1].part[1].valueCodeableConcept = #PG
 
 
 // Premier implant - Composant fémoral
@@ -46,7 +46,7 @@ Description: "Exemple d'utilisation de l'opération SurgicalProcedureOperation p
 * parameter[2].part[4].valueString = "Composant fémoral Triathlon taille 4"
 
 * parameter[2].part[5].name = "implantType"
-* parameter[2].part[5].valueCodeableConcept.coding.system = "https://fhir.orthense.com/CodeSystem/ImplantComponentTypes"
+* parameter[2].part[5].valueCodeableConcept.coding.system = Canonical(ImplantTypeCS)
 * parameter[2].part[5].valueCodeableConcept.coding.code = #femoral-component
 * parameter[2].part[5].valueCodeableConcept.coding.display = "Composant fémoral"
 
@@ -69,7 +69,7 @@ Description: "Exemple d'utilisation de l'opération SurgicalProcedureOperation p
 * parameter[3].part[4].valueString = "Plateau tibial Triathlon taille 3"
 
 * parameter[3].part[5].name = "implantType"
-* parameter[3].part[5].valueCodeableConcept.coding.system = "https://fhir.orthense.com/CodeSystem/ImplantComponentTypes"
+* parameter[3].part[5].valueCodeableConcept.coding.system = Canonical(ImplantTypeCS)
 * parameter[3].part[5].valueCodeableConcept.coding.code = #tibial-base
 * parameter[3].part[5].valueCodeableConcept.coding.display = "Plateau tibial"
 
@@ -88,7 +88,7 @@ Description: "Exemple d'utilisation de l'opération SurgicalProcedureOperation p
 * parameter[4].part[3].valueString = "Insert en polyéthylène Triathlon 10mm"
 
 * parameter[4].part[4].name = "implantType"
-* parameter[4].part[4].valueCodeableConcept.coding.system = "https://fhir.orthense.com/CodeSystem/ImplantComponentTypes"
+* parameter[4].part[4].valueCodeableConcept.coding.system = Canonical(ImplantTypeCS)
 * parameter[4].part[4].valueCodeableConcept.coding.code = #polyethylene-insert
 * parameter[4].part[4].valueCodeableConcept.coding.display = "Insert en polyéthylène"
 
@@ -107,12 +107,11 @@ Description: "Exemple de réponse générée par l'opération SurgicalProcedureO
 * parameter[0].resource.issue.severity = #information
 * parameter[0].resource.issue.code = #informational
 * parameter[0].resource.issue.diagnostics = "Les implants ont été associés avec succès"
-* parameter[0].resource.issue.details.coding.system = "https://fhir.orthense.com/CodeSystem/operation-outcomes"
+* parameter[0].resource.issue.details.coding.system = Canonical(OperationOutcome)
 * parameter[0].resource.issue.details.coding.code = #procedure-updated
 * parameter[0].resource.issue.details.coding.display = "Procédure mise à jour avec succès"
 
 * parameter[1].name = "procedureReference"
 * parameter[1].valueIdentifier.system = "http://france.fr/nir"
 * parameter[1].valueIdentifier.value = "1234567890123"
-// Define aliases to external code systems at the top of the file
-Alias: $sct = http://snomed.info/sct
+

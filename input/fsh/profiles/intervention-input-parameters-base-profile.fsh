@@ -1,15 +1,15 @@
 Invariant: nir-regex
-Description: "NIR must match the French NIR format"
+Description: "NIR doit correspondre au format NIR Français"
 Severity: #error
 Expression: "$this.matches('^[12][0-9]{2}(0[1-9]|1[0-2])(2[AB]|[0-9]{2})[0-9]{3}[0-9]{3}[0-9]{2}$')"
 
 Invariant: rpps-regex
-Description: "RPPS must match the French RPPS format"
+Description: "RPPS doit correspondre au format RPPS Français"
 Severity: #error
 Expression: "$this.matches('^[0-9]{11}$')"
 
 Invariant: finess-regex
-Description: "NIR must match the French NIR format"
+Description: "Finess Géo doit correspondre au format Finess Géo Français"
 Severity: #error
 Expression: "$this.matches('^[0-9]{9}$')"
 
@@ -35,7 +35,7 @@ Description: "Définit la structure et les contraintes de base pour les paramèt
 * parameter contains nir 1..1
 * parameter[nir].name = #nir (exactly)
 * parameter[nir].value[x] only string
-* parameter[nir].value[x] 1..1 // Rendre la valeur obligatoire explicitement
+* parameter[nir].value[x] 1..1 
 * parameter[nir].valueString obeys nir-regex
 
 // Paramètre 'rpps'
@@ -44,7 +44,6 @@ Description: "Définit la structure et les contraintes de base pour les paramèt
 * parameter[rpps].value[x] only string
 * parameter[rpps].value[x] 1..1
 * parameter[rpps].valueString obeys rpps-regex
-// * parameter[rpps].documentation = "..." // Supprimé
 
 // Paramètre 'finessGeographique'
 * parameter contains finessGeographique 1..1
@@ -56,33 +55,25 @@ Description: "Définit la structure et les contraintes de base pour les paramèt
 * parameter contains lateralite 0..1
 * parameter[lateralite].name = #lateralite (exactly)
 * parameter[lateralite].value[x] only CodeableConcept
-* parameter[lateralite].value[x] 0..1 // Rendre la valeur obligatoire explicitement
-* parameter[lateralite].valueCodeableConcept from https://fhir.orthense.com/ValueSet/LateraliteVS (required) 
+* parameter[lateralite].value[x] 0..1 // Rendre la valeur optionnelle 
+* parameter[lateralite].valueCodeableConcept from LateraliteVS (required) 
 
 // Paramètre 'dateIntervention'
 * parameter contains dateIntervention 1..1
 * parameter[dateIntervention].name = #dateIntervention (exactly)
 * parameter[dateIntervention].value[x] only dateTime
-* parameter[dateIntervention].value[x] 1..1 // Rendre la valeur obligatoire explicitement
-// * parameter[dateIntervention].documentation = "..." // Supprimé
+* parameter[dateIntervention].value[x] 1..1 // * parameter[dateIntervention].documentation = "..." // Supprimé
 
 // Paramètre 'typeProcedure'
 * parameter contains typeProcedure 1..1
 * parameter[typeProcedure].name = #typeProcedure (exactly)
 * parameter[typeProcedure].value[x] only CodeableConcept
-* parameter[typeProcedure].value[x] 1..1 // Rendre la valeur obligatoire explicitement
-* parameter[typeProcedure].valueCodeableConcept from https://fhir.orthense.com/ValueSet/RegistreVS (required) 
+* parameter[typeProcedure].value[x] 1..1 
+* parameter[typeProcedure].valueCodeableConcept from RegistreVS (required) 
+* parameter[typeProcedure].valueCodeableConcept ^short = "Ex: PG. Quand la valeur est 'PG', les autres paramètres, notamment la description des implants, doivent suivre le profil intervention-input-parameters-pg-profile"
 
-* parameter[typeProcedure].valueCodeableConcept ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support"
-* parameter[typeProcedure].valueCodeableConcept ^extension[=].valueString = "When typeProcedure is PG, use profile https://fhir.orthense.com/StructureDefinition/intervention-input-parameters-pg-profile"
-
-// * parameter[typeProcedure].valueCodeableConcept from $VS_INTERVENTION_TYPES (required) 
-// * parameter[typeProcedure].documentation = "..." // Supprimé
-
-// Paramètre 'implants' (liste, 0 à *)
 * parameter contains implants 0..*
 * parameter[implants].name = #implants (exactly)
-// * parameter[implants].documentation = "..." // Supprimé
   // ---- Slicing des parts de l'implant par nom ----
 * parameter[implants].part ^slicing.discriminator.type = #value
 * parameter[implants].part ^slicing.discriminator.path = "name"
@@ -94,7 +85,7 @@ Description: "Définit la structure et les contraintes de base pour les paramèt
   // Part 'fournisseur'
 * parameter[implants].part[fournisseur].name = #fournisseur (exactly)
 * parameter[implants].part[fournisseur].value[x] only string
-* parameter[implants].part[fournisseur].value[x] 1..1 // Rendre la valeur obligatoire explicitement si min=1 pour la part
+* parameter[implants].part[fournisseur].value[x] 1..1 
 // * parameter[implants].part[fournisseur].documentation = "..." // Supprimé
 
   // Part 'udi'
@@ -113,7 +104,7 @@ Description: "Définit la structure et les contraintes de base pour les paramèt
   // Part 'reference'
 * parameter[implants].part[reference].name = #reference (exactly)
 * parameter[implants].part[reference].value[x] only string
-* parameter[implants].part[reference].value[x] 1..1 // Rendre la valeur obligatoire explicitement si min=1 pour la part
+* parameter[implants].part[reference].value[x] 1..1 
 // * parameter[implants].part[reference].documentation = "..." // Supprimé
 
   // Part 'type' (avec binding général)
@@ -126,7 +117,7 @@ Description: "Définit la structure et les contraintes de base pour les paramèt
   // Part 'description'
 * parameter[implants].part[description].name = #description (exactly)
 * parameter[implants].part[description].value[x] only string
-* parameter[implants].part[description].value[x] 1..1 // Rendre la valeur obligatoire explicitement si min=1 pour la part
+* parameter[implants].part[description].value[x] 1..1 
 // * parameter[implants].part[description].documentation = "..." // Supprimé
 
 

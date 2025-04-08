@@ -66,7 +66,7 @@ Voici un [exemple de message](Parameters-AssocierImplantsProcedureExample.html)
 A la réception d'un message d'association des implants à une procédure, une première validation structurelle est réalisée afin de vérifier que les données reçues sont conformes au contrat de service exprimé par l'`OperationDefinition` [Associer les implants à une procédure chirurgicale orthopédique](OperationDefinition-associer-implants-registre.html). Dans un premier temps les parties prenantes déclarées sont vérifiées afin de s'assurer qu'elles sont connues du coté du registre (patient, chirurgien et établissement). Ensuite un contrôle est réalisé afin d'identifier dans le registre une procédure concernant le patient, le chirurgien, l'établissement, à la date d'intervention, la procédure et éventuellement la latéralité si renseignée. L'appairage est réalisé seulement en cas de correspondance à 100% de ces critères entre le registre et le message reçu. 
 
 > **Info:** 
-> Le code procédure est décrit via le code SNOMED CT racines décrit par le `ValueSet` [Codes SNOMED CT pour prothèses](ValueSet-registres-renacot-procedures.html). Le code latéralité est décrit via le code SNOMED CT associé décrit par le `ValueSet` [CCodes SNOMED CT latéralité](ValueSet-registres-renacot-side.html).
+> Le code procédure est décrit par le `ValueSet` [CodeSystem - Types d'intervention](ValueSet-RegistreVS.html). Le code latéralité est décrit via par le `ValueSet` [Latéralité](ValueSet-LiteraliteVS.html).
 
 
 #### Étape 6 : Confirmation de réception
