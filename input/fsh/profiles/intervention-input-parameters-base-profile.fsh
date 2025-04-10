@@ -1,20 +1,3 @@
-Invariant: nir-regex
-Description: "NIR doit correspondre au format NIR Français"
-Severity: #error
-Expression: "$this.matches('^[12][0-9]{2}(0[1-9]|1[0-2])(2[AB]|[0-9]{2})[0-9]{3}[0-9]{3}[0-9]{2}$')"
-
-Invariant: rpps-regex
-Description: "RPPS doit correspondre au format RPPS Français"
-Severity: #error
-Expression: "$this.matches('^[0-9]{11}$')"
-
-Invariant: finess-regex
-Description: "Finess Géo doit correspondre au format Finess Géo Français"
-Severity: #error
-Expression: "$this.matches('^[0-9]{9}$')"
-
-
-
 // Profil de Base pour les Paramètres d'Entrée
 Profile: InterventionInputParametersBaseProfile
 Id: InterventionInputParametersBaseProfile
@@ -26,11 +9,15 @@ Description: "Définit la structure et les contraintes de base pour les paramèt
 
 * obeys pg-requires-3-to-5-implants
 * obeys pg-requires-implants-type
+* obeys ph-requires-2-to-6-implants
+* obeys ph-requires-implants-type
+* obeys pe-requires-2-to-6-implants
+* obeys pe-requires-implants-type
 
 // ---- Slicing des paramètres par nom ----
 * parameter ^slicing.discriminator.type = #value
 * parameter ^slicing.discriminator.path = "name"
-* parameter ^slicing.rules = #closed // Autorise d'autres paramètres non définis ici (peut être #closed)
+* parameter ^slicing.rules = #open // #closed // Autorise d'autres paramètres non définis ici (peut être #closed)
 
 // ---- Définition des slices pour chaque paramètre ----
 
@@ -114,4 +101,4 @@ Description: "Définit la structure et les contraintes de base pour les paramèt
   // Part 'description'
 * parameter[implants].part[description].name = #description (exactly)
 * parameter[implants].part[description].value[x] only string
-* parameter[implants].part[description].value[x] 1..1 
+* parameter[implants].part[description].value[x] 1..1

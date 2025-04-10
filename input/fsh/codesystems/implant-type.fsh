@@ -6,13 +6,35 @@ Description: "Système de codes locaux définissant les types de dispositifs mé
 * ^caseSensitive = true
 * ^content = #complete
 
-// PG
-* #FEMORAL "Composant fémoral"
-* #TIBIAL "Plateau tibial"
-* #INSERT "Insert"
+// COMMUN
+* #FIXATION "Vis d'ancrage et éléments de fixation"
 
-//PH
-* #CUPULE "Cupule"
-* #TIGE "Tige"
 
-//PE
+// ** PG **
+* #PG_FEMORAL "Composant fémoral"
+// PG - Composant tibial
+* #PG_BASETIBIALE "Base tibiale"
+* #PG_PLATEAUTIBIAL "Plateau tibial"
+
+* #PG_PATELLAIRE "Composant patellaire"
+
+// ** PH **
+
+// PH - Acétabulum (partie cotyloïde) :
+* #PH_CUPULE "Cupule"
+* #PH_INSERT "Inserts"
+
+// PH - Fémur (partie fémorale) :
+* #PH_TIGE "Tige fémorale"
+* #PH_COL "Col fémoral"
+* #PH_TETE "Tête fémorale"
+
+
+// ** PE **
+// PE - Composant huméral
+* #PE_TIGE_HUMERALE "Tige humérale"
+* #PE_TETE_HUMERALE "Tête humérale"
+
+// PE - Composant glénoïdien
+* #PE_GLENOIDE "Composant glénoïdien"
+* #PE_INSERT_GLENOIDIEN "Insert glénoïdien"

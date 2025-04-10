@@ -12,6 +12,8 @@ gencont_bat_url=$scriptdlroot/_gencontinuous.bat
 gencont_sh_url=$scriptdlroot/_gencontinuous.sh
 gen_sh_url=$scriptdlroot/_genonce.sh
 update_sh_url=$scriptdlroot/_updatePublisher.sh
+build_sh_url=$scriptdlroot/_build.sh
+build_bat_url=$scriptdlroot/_build.bat
 
 skipPrompts=false
 FORCE=false
@@ -103,6 +105,16 @@ if [[ $skipPrompts != true ]]; then
 if [[ $skipPrompts == true ]] || [[ $response =~ ^[yY].*$ ]]; then
   echo "Downloading most recent scripts "
 
+  curl -L $build_bat_url -o /tmp/_build.new
+  cp /tmp/_build.new _build.bat
+  rm /tmp/_build.new
+
+
+  curl -L $build_sh_url -o /tmp/_build.new
+  cp /tmp/_build.new _build.sh
+  chmod +x _build.sh
+  rm /tmp/_build.new
+
   curl -L $update_bat_url -o /tmp/_updatePublisher.new
   cp /tmp/_updatePublisher.new _updatePublisher.bat
   rm /tmp/_updatePublisher.new
@@ -130,5 +142,3 @@ if [[ $skipPrompts == true ]] || [[ $response =~ ^[yY].*$ ]]; then
   chmod +x _updatePublisher.sh
   rm /tmp/_updatePublisher.new
 fi
-
-echo "Done"

@@ -1,10 +1,10 @@
-Instance: AssocierImplantsProcedureExample
+Instance: AssocierImplantsProcedurePGExample
 InstanceOf: Parameters
 Usage: #example
-Title: "Exemple de déclaration d'intervention chirurgicale"
+Title: "Exemple de déclaration d'intervention chirurgicale - Prothèse de Genou"
 Description: "Exemple d'utilisation de l'opération SurgicalProcedureOperation pour déclarer une arthroplastie totale de genou droit"
 
-* id = "AssocierImplantsProcedureExample"
+* id = "AssocierImplantsProcedurePGExample"
 
 * parameter[0].name = "identifiantsPartiesPrenantes"
 * parameter[0].part[0].name = "nir"
@@ -26,6 +26,8 @@ Description: "Exemple d'utilisation de l'opération SurgicalProcedureOperation p
 * parameter[1].part[1].name = "procedureType"
 * parameter[1].part[1].valueCodeableConcept = #PG
 
+* parameter[1].part[2].name = "lateralite"
+* parameter[1].part[2].valueCodeableConcept = LateraliteCS#DROITE
 
 // Premier implant - Composant fémoral
 * parameter[2].name = "implants"
@@ -47,10 +49,10 @@ Description: "Exemple d'utilisation de l'opération SurgicalProcedureOperation p
 
 * parameter[2].part[5].name = "implantType"
 * parameter[2].part[5].valueCodeableConcept.coding.system = Canonical(ImplantTypeCS)
-* parameter[2].part[5].valueCodeableConcept.coding.code = #femoral-component
+* parameter[2].part[5].valueCodeableConcept.coding.code = #PG_FEMORAL
 * parameter[2].part[5].valueCodeableConcept.coding.display = "Composant fémoral"
 
-// Deuxième implant - Plateau tibial
+// Deuxième implant - Base tibiale
 * parameter[3].name = "implants"
 * parameter[3].part[0].name = "UDI"
 * parameter[3].part[0].valueIdentifier.system = "https://ec.europa.eu/tools/eudamed"
@@ -66,51 +68,32 @@ Description: "Exemple d'utilisation de l'opération SurgicalProcedureOperation p
 * parameter[3].part[3].valueString = "A213B457"
 
 * parameter[3].part[4].name = "description"
-* parameter[3].part[4].valueString = "Plateau tibial Triathlon taille 3"
+* parameter[3].part[4].valueString = "Base tibiale Triathlon taille 3"
 
 * parameter[3].part[5].name = "implantType"
 * parameter[3].part[5].valueCodeableConcept.coding.system = Canonical(ImplantTypeCS)
-* parameter[3].part[5].valueCodeableConcept.coding.code = #tibial-base
-* parameter[3].part[5].valueCodeableConcept.coding.display = "Plateau tibial"
+* parameter[3].part[5].valueCodeableConcept.coding.code = #PG_BASETIBIALE
+* parameter[3].part[5].valueCodeableConcept.coding.display = "Base tibiale"
 
-// Troisième implant - Insert en polyéthylène
+// Troisième implant - Plateau tibial
 * parameter[4].name = "implants"
-* parameter[4].part[0].name = "fournisseur"
-* parameter[4].part[0].valueString = "Stryker Orthopaedics"
+* parameter[4].part[0].name = "UDI"
+* parameter[4].part[0].valueIdentifier.system = "https://ec.europa.eu/tools/eudamed"
+* parameter[4].part[0].valueIdentifier.value = "(01)00844588003296(17)250315(10)A213B458"
 
-* parameter[4].part[1].name = "reference"
-* parameter[4].part[1].valueString = "TRIATHLON-PE-10MM"
+* parameter[4].part[1].name = "fournisseur"
+* parameter[4].part[1].valueString = "Stryker Orthopaedics"
 
-* parameter[4].part[2].name = "lot"
-* parameter[4].part[2].valueString = "A213B458"
+* parameter[4].part[2].name = "reference"
+* parameter[4].part[2].valueString = "TRIATHLON-PE-10MM"
 
-* parameter[4].part[3].name = "description"
-* parameter[4].part[3].valueString = "Insert en polyéthylène Triathlon 10mm"
+* parameter[4].part[3].name = "lot"
+* parameter[4].part[3].valueString = "A213B458"
 
-* parameter[4].part[4].name = "implantType"
-* parameter[4].part[4].valueCodeableConcept.coding.system = Canonical(ImplantTypeCS)
-* parameter[4].part[4].valueCodeableConcept.coding.code = #polyethylene-insert
-* parameter[4].part[4].valueCodeableConcept.coding.display = "Insert en polyéthylène"
+* parameter[4].part[4].name = "description"
+* parameter[4].part[4].valueString = "Plateau tibial Triathlon taille 3 10mm"
 
-
-// Sample response (in a separate instance)
-Instance: AssocierImplantsProcedureExampleResponse
-InstanceOf: Parameters
-Usage: #example
-Title: "Exemple de réponse à une déclaration d'intervention chirurgicale"
-Description: "Exemple de réponse générée par l'opération SurgicalProcedureOperation"
-
-* id = "AssocierImplantsProcedureResponseExample"
-
-* parameter[0].name = "operationOutcome"
-* parameter[0].resource.resourceType = "OperationOutcome"
-* parameter[0].resource.issue.severity = #information
-* parameter[0].resource.issue.code = #informational
-* parameter[0].resource.issue.diagnostics = "Les implants ont été associés avec succès"
-* parameter[0].resource.issue.details.coding.system = Canonical(OperationOutcome)
-* parameter[0].resource.issue.details.coding.code = #procedure-updated
-* parameter[0].resource.issue.details.coding.display = "Procédure mise à jour avec succès"
-
-* parameter[1].name = "procedureReference"
-* parameter[1].valueIdentifier.system = "http://france.fr/nir"
-* parameter[1].valueIdentifier.value = "1234567890123"
+* parameter[4].part[5].name = "implantType"
+* parameter[4].part[5].valueCodeableConcept.coding.system = Canonical(ImplantTypeCS)
+* parameter[4].part[5].valueCodeableConcept.coding.code = #PG_PLATEAUTIBIAL
+* parameter[4].part[5].valueCodeableConcept.coding.display = "Plateau tibial"
