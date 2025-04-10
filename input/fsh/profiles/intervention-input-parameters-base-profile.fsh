@@ -24,6 +24,9 @@ Description: "Définit la structure et les contraintes de base pour les paramèt
 * ^status = #draft
 * ^abstract = true // Profil de base, non utilisable directement
 
+* obeys pg-requires-3-to-5-implants
+* obeys pg-requires-implants-type
+
 // ---- Slicing des paramètres par nom ----
 * parameter ^slicing.discriminator.type = #value
 * parameter ^slicing.discriminator.path = "name"
@@ -62,7 +65,7 @@ Description: "Définit la structure et les contraintes de base pour les paramèt
 * parameter contains dateIntervention 1..1
 * parameter[dateIntervention].name = #dateIntervention (exactly)
 * parameter[dateIntervention].value[x] only dateTime
-* parameter[dateIntervention].value[x] 1..1 // * parameter[dateIntervention].documentation = "..." // Supprimé
+* parameter[dateIntervention].value[x] 1..1
 
 // Paramètre 'typeProcedure'
 * parameter contains typeProcedure 1..1
@@ -86,66 +89,29 @@ Description: "Définit la structure et les contraintes de base pour les paramèt
 * parameter[implants].part[fournisseur].name = #fournisseur (exactly)
 * parameter[implants].part[fournisseur].value[x] only string
 * parameter[implants].part[fournisseur].value[x] 1..1 
-// * parameter[implants].part[fournisseur].documentation = "..." // Supprimé
 
   // Part 'udi'
 * parameter[implants].part[udi].name = #udi (exactly)
 * parameter[implants].part[udi].value[x] only string
 * parameter[implants].part[udi].value[x] 1..1
-// * parameter[implants].part[udi].value[x] ^pattern = "..." // Appliquer pattern ici si besoin pour UDI
-// * parameter[implants].part[udi].documentation = "..." // Supprimé
 
   // Part 'lot'
 * parameter[implants].part[lot].name = #lot (exactly)
 * parameter[implants].part[lot].value[x] only string
 * parameter[implants].part[lot].value[x] 1..1
-// * parameter[implants].part[lot].documentation = "..." // Supprimé
 
   // Part 'reference'
 * parameter[implants].part[reference].name = #reference (exactly)
 * parameter[implants].part[reference].value[x] only string
 * parameter[implants].part[reference].value[x] 1..1 
-// * parameter[implants].part[reference].documentation = "..." // Supprimé
 
-  // Part 'type' (avec binding général)
-// * parameter[implants].part[type].name = "type" (exactly)
-// * parameter[implants].part[type].value[x] only CodeableConcept
-// * parameter[implants].part[type].value[x] 1..1
-// * parameter[implants].part[type].valueCodeableConcept from $VS_IMPLANT_TYPES (required)
-// * parameter[implants].part[type].documentation = "..." // Supprimé
+// Part 'type' (avec binding général)
+* parameter[implants].part[type].name = "type" (exactly)
+* parameter[implants].part[type].value[x] only CodeableConcept
+* parameter[implants].part[type].value[x] 1..1
+* parameter[implants].part[type].valueCodeableConcept from ImplantTypeVS (required)
 
   // Part 'description'
 * parameter[implants].part[description].name = #description (exactly)
 * parameter[implants].part[description].value[x] only string
 * parameter[implants].part[description].value[x] 1..1 
-// * parameter[implants].part[description].documentation = "..." // Supprimé
-
-
-// // Profil Spécifique pour les Procédures Orthopédiques
-// Profile: InterventionInputParametersOrthoProfile
-// Id: InterventionInputParametersOrthoProfile
-// Parent: InterventionInputParametersBaseProfile // Hérite du profil de base
-// Title: "Profil Spécifique pour les Paramètres d'Entrée d'une Intervention Orthopédique"
-// Description: "Profil contraignant les paramètres pour une intervention de type orthopédique, notamment les types d'implants autorisés."
-// * ^url = $PROF_PARAMS_ORTHO
-// * ^version = "1.0.0"
-// * ^status = #draft
-// * ^abstract = false // Ce profil est concret
-
-// // Contrainte: Le type de procédure DOIT être ORTHO pour ce profil
-// // On utilise une contrainte sur le code ET le système pour être précis
-// * parameter[typeProcedure].valueCodeableConcept.coding ^slicing.discriminator.type = #value
-// * parameter[typeProcedure].valueCodeableConcept.coding ^slicing.discriminator.path = "system"
-// * parameter[typeProcedure].valueCodeableConcept.coding ^slicing.rules = #open
-// * parameter[typeProcedure].valueCodeableConcept.coding contains procTypeCoding 1..1
-// * parameter[typeProcedure].valueCodeableConcept.coding[procTypeCoding].system = $CS_INTERVENTION_TYPES (exactly)
-// * parameter[typeProcedure].valueCodeableConcept.coding[procTypeCoding].code = #ORTHO (exactly)
-
-// // Contrainte: Redéfinition du ValueSet pour le type d'implant autorisé en ortho
-// // Cible la part 'type', puis sa valeur CodeableConcept
-// // * parameter[implants].part[type].valueCodeableConcept from $VS_ORTHO_IMPLANT_TYPES (required) // Change le binding
-
-// // // Optionnel: Rendre la référence catalogue obligatoire pour l'ortho
-// // * parameter[implants].part[reference] 1..1 // Rend la part 'reference' obligatoire
-// // * parameter[implants].part[reference].value[x] 1..1 // Assurer que la valeur est présente si la part l'est
-

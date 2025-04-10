@@ -6,6 +6,7 @@ Description: "Système de codes locaux définissant les types de procédures chi
 * ^status = #draft
 * ^caseSensitive = true
 * ^content = #complete
+* ^url = "http://fhir.orthense.fr/CodeSystem/RegistreCS"
 
 * #PG "Prothèse de Genou"
 * #PH "Prothèse de Hanche"
