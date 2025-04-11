@@ -4,8 +4,16 @@ InstanceOf: OperationDefinition        // Spécifie le type de ressource FHIR
 Usage: #definition                   // Indique que c'est une définition (pas un exemple)
 Title: "Associer les implants à une procédure chirurgicale orthopédique"
 Description: "Opération permettant à un établissement d'envoyer les détails d'une intervention. 
-Pour les prothèses de genou (PG), la requête doit également se conformer au profil InterventionInputParametersPGProfile 
-et inclure exactement 3 implants spécifiques (fémoral, tibial, insert). 
+
+Pour les prothèses de genou (PG), la requête doit se conformer au profil InterventionInputParametersPGProfile 
+et inclure les implants spécifiques (fémoral, tibial, insert).
+
+Pour les prothèses de hanche (PH), la requête doit se conformer au profil InterventionInputParametersPHProfile
+et inclure les implants spécifiques correspondants.
+
+Pour les prothèses d'épaule (PE), la requête doit se conformer au profil InterventionInputParametersPEProfile
+et inclure les implants spécifiques à ce type d'intervention.
+
 Le profil appliqué dépend de la valeur du paramètre typeProcedure."
 
 * id = "associer-implants-registre" // Définit explicitement l'ID de la ressource

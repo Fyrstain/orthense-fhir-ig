@@ -62,7 +62,7 @@ Description: "Définit la structure et les contraintes de base pour les paramèt
 * parameter[typeProcedure].valueCodeableConcept from RegistreVS (required) 
 * parameter[typeProcedure].valueCodeableConcept ^short = "Ex: PG. Quand la valeur est 'PG', les autres paramètres, notamment la description des implants, doivent suivre le profil intervention-input-parameters-pg-profile"
 
-* parameter contains implants 0..*
+* parameter contains implants 1..*
 * parameter[implants].name = #implants (exactly)
   // ---- Slicing des parts de l'implant par nom ----
 * parameter[implants].part ^slicing.discriminator.type = #value
