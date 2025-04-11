@@ -7,11 +7,11 @@ Description: "Définit la structure et les contraintes de base pour les paramèt
 * ^status = #draft
 * ^abstract = true // Profil de base, non utilisable directement
 
-* obeys pg-requires-3-to-5-implants
+* obeys pg-requires-implants-count
 * obeys pg-requires-implants-type
-* obeys ph-requires-2-to-6-implants
+* obeys ph-requires-implants-count
 * obeys ph-requires-implants-type
-* obeys pe-requires-2-to-6-implants
+* obeys pe-requires-implants-count
 * obeys pe-requires-implants-type
 
 // ---- Slicing des paramètres par nom ----
