@@ -7,7 +7,7 @@ Description: "Système de codes locaux définissant les types de dispositifs mé
 * ^content = #complete
 
 // COMMUN
-* #FIXATION "Vis d'ancrage et éléments de fixation"
+* #FIXATION "Vis et autres éléments de fixation"
 
 
 // ** PG **
