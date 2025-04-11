@@ -9,8 +9,10 @@ Description: "Définit la structure et les contraintes de base pour les paramèt
 
 * obeys pg-requires-implants-count
 * obeys pg-requires-implants-type
+
 * obeys ph-requires-implants-count
 * obeys ph-requires-implants-type
+
 * obeys pe-requires-implants-count
 * obeys pe-requires-implants-type
 
