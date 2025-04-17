@@ -6,10 +6,10 @@ Title: "Associer les implants à une procédure chirurgicale orthopédique"
 Description: "Opération permettant à un établissement d'envoyer les détails d'une intervention. 
 
 Pour les prothèses de genou (PG), la requête doit se conformer au profil InterventionInputParametersPGProfile 
-et inclure les implants spécifiques (fémoral, tibial, insert).
+et inclure les implants spécifiques à ce type d'intervention.
 
 Pour les prothèses de hanche (PH), la requête doit se conformer au profil InterventionInputParametersPHProfile
-et inclure les implants spécifiques correspondants.
+et inclure les implants spécifiques à ce type d'intervention.
 
 Pour les prothèses d'épaule (PE), la requête doit se conformer au profil InterventionInputParametersPEProfile
 et inclure les implants spécifiques à ce type d'intervention.
@@ -65,7 +65,7 @@ Le profil appliqué dépend de la valeur du paramètre typeProcedure."
 * parameter[4].documentation = "Type d'intervention réalisée. Détermine les implants attendus." // Mise à jour doc
 * parameter[4].type = #CodeableConcept
 * parameter[4].binding.strength = #required
-* parameter[4].binding.valueSet = Canonical(RegistreVS)
+* parameter[4].binding.valueSet = Canonical(ProcedureVS)
 
 * parameter[5].name = #lateralite
 * parameter[5].use = #in
@@ -127,7 +127,7 @@ Le profil appliqué dépend de la valeur du paramètre typeProcedure."
 * parameter[6].part[5].type = #string
 
 // Paramètre de sortie
-* parameter[7].name = #return
+* parameter[7].name = #result
 * parameter[7].use = #out
 * parameter[7].min = 1
 * parameter[7].max = "1"
@@ -139,7 +139,7 @@ Contient les informations de succès ou d'erreur de l'opération, dont :
 """
 
 // En cas de succès, identifiant RENACOT
-* parameter[8].name = #registre-identifier
+* parameter[8].name = #idRegistre
 * parameter[8].use = #out
 * parameter[8].min = 0
 * parameter[8].max = "1"

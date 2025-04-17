@@ -52,7 +52,7 @@ L'automatisation de l'intégration des données dans le registre permet de rédu
 Une partie des données essentielles pour le registre orthopédique concerne la description des implants, telles que leur type, numéro de série, fabricant etc... Ces informations sont déjà collectées au sein du SIH des établissements. 
 
 #### Étape 2 : Format FHIR
-Ces données collectées sont ensuite converties en un format compatible avec FHIR. Le format FHIR standardise les informations et permet une communication fluide entre les systèmes. Une `OperationDefinition` dédiée [Associer les implants à une procédure chirurgicale orthopédique](OperationDefinition-associer-implants-registre.html) permet de faire remonter au registre une `procédure` chirurgicale éligible au registre Renacot (Prothèse de genou, Prothèse de hanche, Prothèse d'épaule, cf. le `ValueSet` correspondant [Registre](ValueSet-RegistreVS.html))
+Ces données collectées sont ensuite converties en un format compatible avec FHIR. Le format FHIR standardise les informations et permet une communication fluide entre les systèmes. Une `OperationDefinition` dédiée [Associer les implants à une procédure chirurgicale orthopédique](OperationDefinition-associer-implants-registre.html) permet de faire remonter au registre une `procédure` chirurgicale éligible au registre Renacot (Prothèse de genou, Prothèse de hanche, Prothèse d'épaule, cf. le `ValueSet` correspondant [Registre](ValueSet-ProcedureVS.html))
 
 #### Étape 3 : Authentification OAuth2 - Client Credentials
 Avant la transmission des données, une authentification OAuth2 est effectuée via le flux *Client Credentials*. Cela permet de s'assurer que l'application envoyant les données est autorisée à accéder et modifier les informations dans le registre national. Cette étape permet de garantir la sécurité et la conformité du processus.
@@ -66,7 +66,7 @@ Voici un [exemple de message](Parameters-AssocierImplantsProcedureExample.html)
 A la réception d'un message d'association des implants à une procédure, une première validation structurelle est réalisée afin de vérifier que les données reçues sont conformes au contrat de service exprimé par l'`OperationDefinition` [Associer les implants à une procédure chirurgicale orthopédique](OperationDefinition-associer-implants-registre.html). Dans un premier temps les parties prenantes déclarées sont vérifiées afin de s'assurer qu'elles sont connues du coté du registre (patient, chirurgien et établissement). Ensuite un contrôle est réalisé afin d'identifier dans le registre une procédure concernant le patient, le chirurgien, l'établissement, à la date d'intervention, la procédure et éventuellement la latéralité si renseignée. L'appairage est réalisé seulement en cas de correspondance à 100% de ces critères entre le registre et le message reçu. 
 
 > **Info:** 
-> Le code procédure est décrit par le `ValueSet` [CodeSystem - Types d'intervention](ValueSet-RegistreVS.html). Le code latéralité est décrit via par le `ValueSet` [Latéralité](ValueSet-LiteraliteVS.html).
+> Le code procédure est décrit par le `ValueSet` [CodeSystem - Types d'intervention](ValueSet-ProcedureVS.html). Le code latéralité est décrit via par le `ValueSet` [Latéralité](ValueSet-LiteraliteVS.html).
 
 
 #### Étape 6 : Confirmation de réception

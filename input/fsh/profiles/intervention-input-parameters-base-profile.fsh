@@ -61,7 +61,7 @@ Description: "Définit la structure et les contraintes de base pour les paramèt
 * parameter[typeProcedure].name = #typeProcedure (exactly)
 * parameter[typeProcedure].value[x] only CodeableConcept
 * parameter[typeProcedure].value[x] 1..1 
-* parameter[typeProcedure].valueCodeableConcept from RegistreVS (required) 
+* parameter[typeProcedure].valueCodeableConcept from ProcedureVS (required) 
 * parameter[typeProcedure].valueCodeableConcept ^short = "Ex: PG. Quand la valeur est 'PG', les autres paramètres, notamment la description des implants, doivent suivre le profil intervention-input-parameters-pg-profile"
 
 * parameter contains implants 1..*
