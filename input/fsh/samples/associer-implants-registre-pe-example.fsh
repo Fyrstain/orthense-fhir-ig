@@ -7,7 +7,7 @@ Description: "Exemple d'utilisation de l'opération associer-implants-registre p
 * id = "AssocierImplantsProcedurePEExample"
 
 * parameter[nir].name = "nir"
-* parameter[nir].valueString = "2840510012345678"
+* parameter[nir].valueString = "284051012345678"
 
 * parameter[rpps].name = "rpps"
 * parameter[rpps].valueString = "12345678901"
