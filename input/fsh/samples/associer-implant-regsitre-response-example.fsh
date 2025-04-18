@@ -14,5 +14,5 @@ Description: "Exemple de réponse générée par l'opération associer-implants-
 * parameter[0].resource.issue[0].diagnostics = "Les implants ont été associés avec succès"
 
 * parameter[1].name = "idRegistre"
-* parameter[1].valueIdentifier.system = "https://registres.aphp.fr/renacot/procedure"
-* parameter[1].valueIdentifier.value = "RENACOT-2025-12345"
+* parameter[1].valueIdentifier.system = "https://registres.renacot.org/procedure"
+* parameter[1].valueIdentifier.value = "12345"
