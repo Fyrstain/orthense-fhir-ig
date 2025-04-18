@@ -2,7 +2,7 @@
 ValueSet: ProcedureVS
 Id: ProcedureVS
 Title: "ValueSet - Types de Procédure d'Intervention"
-Description: "Ensemble des codes SNOMED CT valides pour les procédures d'arthroplasties de la hanche, du genou et de l'épaule."
+Description: "Ensemble des codes SNOMED CT valides pour les procédures supportées par le registre"
 * ^experimental = true
 * ^status = #draft
 * ^url = "https://fhir.orthense.com/ValueSet/ProcedureVS"
