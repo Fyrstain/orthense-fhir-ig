@@ -14,7 +14,9 @@ et inclure les implants spécifiques à ce type d'intervention.
 Pour les prothèses d'épaule (PE), la requête doit se conformer au profil InterventionInputParametersPEProfile
 et inclure les implants spécifiques à ce type d'intervention.
 
-Le profil appliqué dépend de la valeur du paramètre typeProcedure."
+Le profil appliqué dépend de la valeur du paramètre typeProcedure.
+
+Note: Le registre Renacot évolue continuellement et de nouvelles procédures peuvent être ajoutées à l'avenir. Elles feront l'objet de mise à jour spécifiques dans ce guide d'implémentation avec le soucis affirmé de garantir la compatibilité ascendante."
 
 * id = "associer-implants-registre" // Définit explicitement l'ID de la ressource
 * name = "AssocierImplantsRegistre" // Le 'name' de l'OperationDefinition
