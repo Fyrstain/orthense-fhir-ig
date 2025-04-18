@@ -4,6 +4,8 @@ Id: InterventionInputParametersPEProfile
 Title: "d'Entrée des Paramètres d'Intervention - PE"
 Description: "Définit la structure et les contraintes pour les paramètres d'entrée spécifiques à une intervention de prothèse d'épaule"
 
+
+
 * obeys pe-requires-implants-count
 * obeys pe-requires-implants-type
 

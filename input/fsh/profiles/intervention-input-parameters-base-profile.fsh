@@ -4,6 +4,7 @@ Id: InterventionInputParametersBaseProfile
 Parent: Parameters
 Title: "Profil de Base pour les Paramètres d'Entrée de l'Intervention"
 Description: "Définit la structure et les contraintes de base pour les paramètres d'entrée de l'opération $envoyer-donnees-intervention. Ce profil est abstrait."
+
 * ^status = #draft
 * ^abstract = true // Profil de base, non utilisable directement
 
