@@ -1,5 +1,5 @@
 Instance: AssocierImplantsProcedurePHExample
-InstanceOf: InterventionInputParametersPhProfile
+InstanceOf: InterventionInputParametersBaseProfile
 Usage: #example
 Title: "Exemple de déclaration d'intervention chirurgicale - Prothèse de Hanche"
 Description: "Exemple d'utilisation de l'opération associer-implants-registre pour déclarer une arthroplastie totale de hanche gauche"

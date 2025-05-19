@@ -1,5 +1,5 @@
 Instance: AssocierImplantsProcedurePGExample
-InstanceOf: InterventionInputParametersPgProfile
+InstanceOf: InterventionInputParametersBaseProfile
 Usage: #example
 Title: "Exemple de déclaration d'intervention chirurgicale - Prothèse de Genou"
 Description: "Exemple d'utilisation de l'opération associer-implants-registre pour déclarer une arthroplastie totale de genou droit"

@@ -6,7 +6,6 @@ Title: "Profil de Base pour les Paramètres d'Entrée de l'Intervention"
 Description: "Définit la structure et les contraintes de base pour les paramètres d'entrée de l'opération $envoyer-donnees-intervention. Ce profil est abstrait."
 
 * ^status = #draft
-* ^abstract = true // Profil de base, non utilisable directement
 
 * obeys pg-requires-implants-count
 * obeys pg-requires-implants-type
@@ -16,6 +15,7 @@ Description: "Définit la structure et les contraintes de base pour les paramèt
 
 * obeys pe-requires-implants-count
 * obeys pe-requires-implants-type
+* obeys pe-requires-type
 
 // ---- Slicing des paramètres par nom ----
 * parameter ^slicing.discriminator.type = #value
@@ -64,6 +64,13 @@ Description: "Définit la structure et les contraintes de base pour les paramèt
 * parameter[typeProcedure].value[x] 1..1 
 * parameter[typeProcedure].valueCodeableConcept from ProcedureVS (required) 
 * parameter[typeProcedure].valueCodeableConcept ^short = "Ex: PG. Quand la valeur est 'PG', les autres paramètres, notamment la description des implants, doivent suivre le profil intervention-input-parameters-pg-profile"
+
+// Paramètre 'peType' pour les prothèses d'épaule
+* parameter contains peType 0..1
+* parameter[peType].name = #peType (exactly)
+* parameter[peType].value[x] only CodeableConcept
+* parameter[peType].value[x] 0..1 // Rendre la valeur optionnelle 
+* parameter[peType].valueCodeableConcept from PETypeVS (required)
 
 * parameter contains implants 1..*
 * parameter[implants].name = #implants (exactly)

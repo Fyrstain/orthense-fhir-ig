@@ -1,10 +1,12 @@
-Instance: AssocierImplantsProcedurePEExample
+Instance: AssocierImplantsProcedurePEExampleErreur
 InstanceOf: InterventionInputParametersBaseProfile
 Usage: #example
-Title: "Exemple de déclaration d'intervention chirurgicale - Prothèse d'Épaule"
-Description: "Exemple d'utilisation de l'opération associer-implants-registre pour déclarer une arthroplastie totale d'épaule droite"
+Title: "Exemple de déclaration d'intervention chirurgicale NON VALIDE - Prothèse d'Épaule"
+Description: "Exemple d'utilisation de l'opération associer-implants-registre pour déclarer une arthroplastie totale d'épaule droite provoquant une erreur de validation
 
-* id = "AssocierImplantsProcedurePEExample"
+**Attention : Cet exemple est volontairement erroné pour illustrer une erreur de validation liée à trop de paramètres 'implants'.**"
+
+* id = "AssocierImplantsProcedurePEExampleErreur"
 
 * parameter[nir].name = "nir"
 * parameter[nir].valueString = "284051012345678"
@@ -106,3 +108,43 @@ Description: "Exemple d'utilisation de l'opération associer-implants-registre p
 
 * parameter[implants][3].part[description].name = "description"
 * parameter[implants][3].part[description].valueString = "Insert glénoïdien Blueprint taille 3"
+
+// Fifth implant - Insert glénoïdien (adding to meet the 4..5 cardinality requirement)
+* parameter[implants][4].name = "implants"
+* parameter[implants][4].part[fournisseur].name = "fournisseur"
+* parameter[implants][4].part[fournisseur].valueString = "Wright Medical"
+
+* parameter[implants][4].part[udi].name = "udi"
+* parameter[implants][4].part[udi].valueString = "(01)00844588003404(17)250325(10)A213D459"
+
+* parameter[implants][4].part[lot].name = "lot"
+* parameter[implants][4].part[lot].valueString = "A213D459"
+
+* parameter[implants][4].part[reference].name = "reference"
+* parameter[implants][4].part[reference].valueString = "BLUEPRINT-INSERT-3"
+
+* parameter[implants][4].part[type].name = "type"
+* parameter[implants][4].part[type].valueCodeableConcept = ImplantTypeCS#PE_INSERT_GLENOIDIEN "Insert glénoïdien"
+
+* parameter[implants][4].part[description].name = "description"
+* parameter[implants][4].part[description].valueString = "Insert glénoïdien Blueprint taille 3"
+
+// Sixth implant - Insert glénoïdien (adding to make error on the 4..5 cardinality requirement)
+* parameter[implants][5].name = "implants"
+* parameter[implants][5].part[fournisseur].name = "fournisseur"
+* parameter[implants][5].part[fournisseur].valueString = "Wright Medical"
+
+* parameter[implants][5].part[udi].name = "udi"
+* parameter[implants][5].part[udi].valueString = "(01)00844588003404(17)250325(10)A213D459"
+
+* parameter[implants][5].part[lot].name = "lot"
+* parameter[implants][5].part[lot].valueString = "A213D459"
+
+* parameter[implants][5].part[reference].name = "reference"
+* parameter[implants][5].part[reference].valueString = "BLUEPRINT-INSERT-3"
+
+* parameter[implants][5].part[type].name = "type"
+* parameter[implants][5].part[type].valueCodeableConcept = ImplantTypeCS#PE_INSERT_GLENOIDIEN "Insert glénoïdien"
+
+* parameter[implants][5].part[description].name = "description"
+* parameter[implants][5].part[description].valueString = "Insert glénoïdien Blueprint taille 3"
