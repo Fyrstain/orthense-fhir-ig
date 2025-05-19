@@ -14,3 +14,19 @@ Définitions des termes, acronymes et concepts utilisés dans ce guide. [Voir le
 
 ### Mentions légales et conformité  
 Informations sur les obligations légales et les exigences de conformité. [Détails ici](disclaimer.html).  
+
+## Dépendances
+
+{% include dependency-table.xhtml %}
+
+## Profils Globaux
+
+{% include globals-table.xhtml %}
+
+## Analyse de versions
+
+{% include cross-version-analysis.xhtml %}
+    
+## Déclarations de Propriété Intellectuelle
+
+{% include ip-statements.xhtml %}
